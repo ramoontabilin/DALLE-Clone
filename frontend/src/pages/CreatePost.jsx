@@ -105,7 +105,7 @@ const CreatePost = () => {
 						handleRandom={handleRandom}
 					/>
 
-					<div className='relative bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-64 h-64 p-3 flex justify-center items-center'>
+					<div className='relative bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full h-full sm:w-96 sm:h-96 p-3 flex justify-center items-center'>
 						{form.photo ? (
 							<img
 								src={form.photo}
