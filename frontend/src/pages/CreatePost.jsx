@@ -31,6 +31,7 @@ const CreatePost = () => {
 				setForm({ ...form, photo: `data:image/jpeg;base64,${data.photo}` })
 			} catch (error) {
 				console.log(error)
+				alert(error)
 			} finally {
 				setGeneratingImg(false)
 			}
@@ -53,10 +54,15 @@ const CreatePost = () => {
 				})
 				await response.json()
 					.then((data) => {
-						console.log(data)
-						navigate('/')
+						if (data.success) {
+							navigate('/')
+						} else {
+							console.log(data.message)
+							alert(data.message)
+						}
 					})
 					.catch((error) => {
+						console.log(error)
 						alert(error)
 					})
 				setLoading(false)
